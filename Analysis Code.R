@@ -214,12 +214,12 @@ for (apname in apnames_all) {
   a <- RR_state$`0.5quant`
   x <- round(range(a,na.rm = T) + c(-0.005,0.005),2)
   if(!any(a<1)){
-    v <- c(x[1],quantile(a,probs = c(0.2,0.4,0.6,0.8,0.95)),x[2]) %>% round(3)
+    v <- c(x[1],quantile(a,probs = c(0.2,0.6,0.9)),x[2]) %>% round(3)
   } else if(!any(a>1)){
-    v <- c(x[1],quantile(a,probs = c(0.2,0.4,0.6,0.8,0.95)),x[2]) %>% round(3)
+    v <- c(x[1],quantile(a,probs = c(0.2,0.6,0.9)),x[2]) %>% round(3)
   } else {
-    v <- c(x[1],quantile(a[a<1],probs = c(0.05,0.3,0.5,0.7)),1,
-           quantile(a[a>1],probs = c(0.3,0.5,0.7,0.95)),x[2]) %>% round(3)
+    v <- c(x[1],quantile(a[a<1],probs = c(0.05,0.4,0.7)),1,
+           quantile(a[a>1],probs = c(0.3,0.6,0.9)),x[2]) %>% round(3)
   }
   colorlables <- NULL
   for (i in 2:length(v)) {
@@ -254,7 +254,7 @@ for (apname in apnames_all) {
   # the number of attributable cases
   a <- plotdata_attr$cases_attr
   x <- round(range(a,na.rm = T) + c(-0.05,0.05),1)
-  v <- c(-0.1,0,1,5,quantile(a[a>5],probs = c(0.2,0.5,0.7,0.9,0.95,0.99)),x[2]) %>% ceiling()
+  v <- c(-0.1,0,20,quantile(a[a>20],probs = c(0.4,0.85,0.98)),x[2]) %>% ceiling()
   colorlables <- "0"
   for (i in 3:length(v)) {
     colorlables <- c(colorlables,"("%+%v[i-1]%+%"-"%+%v[i]%+%"]")
@@ -336,12 +336,12 @@ for (apname in apnames_all) {
     a <- RR_state$`0.5quant`
     x <- round(range(a,na.rm = T) + c(-0.005,0.005),2)
     if(!any(a<1)){
-      v <- c(x[1],quantile(a,probs = c(0.2,0.4,0.6,0.8,0.95)),x[2]) %>% round(3)
+      v <- c(x[1],quantile(a,probs = c(0.2,0.6,0.9)),x[2]) %>% round(3)
     } else if(!any(a>1)){
-      v <- c(x[1],quantile(a,probs = c(0.2,0.4,0.6,0.8,0.95)),x[2]) %>% round(3)
+      v <- c(x[1],quantile(a,probs = c(0.2,0.6,0.9)),x[2]) %>% round(3)
     } else {
-      v <- c(x[1],quantile(a[a<1],probs = c(0.05,0.3,0.5,0.7)),1,
-             quantile(a[a>1],probs = c(0.3,0.5,0.7,0.95)),x[2]) %>% round(3)
+      v <- c(x[1],quantile(a[a<1],probs = c(0.05,0.4,0.7)),1,
+             quantile(a[a>1],probs = c(0.3,0.6,0.9)),x[2]) %>% round(3)
     }
     colorlables <- NULL
     for (i in 2:length(v)) {
@@ -450,12 +450,12 @@ for (apname in apnames_all) {
   a <- RR_state$`0.5quant`
   x <- round(range(a,na.rm = T) + c(-0.005,0.005),2)
   if(!any(a<1)){
-    v <- c(x[1],quantile(a,probs = c(0.2,0.4,0.6,0.8,0.95)),x[2]) %>% round(3)
+    v <- c(x[1],quantile(a,probs = c(0.2,0.6,0.9)),x[2]) %>% round(3)
   } else if(!any(a>1)){
-    v <- c(x[1],quantile(a,probs = c(0.2,0.4,0.6,0.8,0.95)),x[2]) %>% round(3)
+    v <- c(x[1],quantile(a,probs = c(0.2,0.6,0.9)),x[2]) %>% round(3)
   } else {
-    v <- c(x[1],quantile(a[a<1],probs = c(0.05,0.3,0.5,0.7)),1,
-           quantile(a[a>1],probs = c(0.3,0.5,0.7,0.95)),x[2]) %>% round(3)
+    v <- c(x[1],quantile(a[a<1],probs = c(0.05,0.4,0.7)),1,
+           quantile(a[a>1],probs = c(0.3,0.6,0.9)),x[2]) %>% round(3)
   }
   colorlables <- NULL
   for (i in 2:length(v)) {
@@ -490,7 +490,7 @@ for (apname in apnames_all) {
   # attributabble deaths
   a <- plotdata_attr$cases_attr
   x <- round(range(a,na.rm = T) + c(-0.05,0.05),1)
-  v <- c(-0.1,0,1,5,quantile(a[a>5],probs = c(0.2,0.5,0.7,0.9,0.95,0.99)),x[2]) %>% ceiling()
+  v <- c(-0.1,0,10,quantile(a[a>10],probs = c(0.4,0.85,0.98)),x[2]) %>% ceiling()
   colorlables <- "0"
   for (i in 3:length(v)) {
     colorlables <- c(colorlables,"("%+%v[i-1]%+%"-"%+%v[i]%+%"]")
@@ -571,13 +571,13 @@ for (apname in apnames_all) {
     
     a <- RR_state$`0.5quant`
     x <- round(range(a,na.rm = T) + c(-0.005,0.005),2)
-    if(!any(a<1)){
-      v <- c(x[1],quantile(a,probs = c(0.2,0.4,0.6,0.8,0.95)),x[2]) %>% round(3)
+   if(!any(a<1)){
+      v <- c(x[1],quantile(a,probs = c(0.2,0.6,0.9)),x[2]) %>% round(3)
     } else if(!any(a>1)){
-      v <- c(x[1],quantile(a,probs = c(0.2,0.4,0.6,0.8,0.95)),x[2]) %>% round(3)
+      v <- c(x[1],quantile(a,probs = c(0.2,0.6,0.9)),x[2]) %>% round(3)
     } else {
-      v <- c(x[1],quantile(a[a<1],probs = c(0.05,0.3,0.5,0.7)),1,
-             quantile(a[a>1],probs = c(0.3,0.5,0.7,0.95)),x[2]) %>% round(3)
+      v <- c(x[1],quantile(a[a<1],probs = c(0.05,0.4,0.7)),1,
+             quantile(a[a>1],probs = c(0.3,0.6,0.9)),x[2]) %>% round(3)
     }
     colorlables <- NULL
     for (i in 2:length(v)) {
