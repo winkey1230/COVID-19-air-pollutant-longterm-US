@@ -1,2 +1,1 @@
-# COVID-19-air-pollutant
-Mapping the long-term associations between air pollutants and COVID-19 risks and the attributable burdens in the continental United States
+Feng, B., Wang, W., Zhou, B., Zhou, Y., Wang, J., & Liao, F. (2023). Mapping the long-term associations between air pollutants and COVID-19 risks and the attributable burdens in the continental United States. Environmental pollution (Barking, Essex : 1987), 324, 121418. Advance online publication. https://doi.org/10.1016/j.envpol.2023.121418
